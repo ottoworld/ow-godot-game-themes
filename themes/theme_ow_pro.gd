@@ -34,7 +34,9 @@ var default_shadow_size := 4
 var default_skew := Vector2(0,0)
 
 # Button
-var button_border_width = 0;
+var button_border_width = 0
+var button_content_margin_v := 24
+var button_content_margin_h := 12
 
 func setup_dark():
 	set_save_path(save_path_dark)
@@ -78,20 +80,24 @@ func define_theme():
 	})
 	
 	var button_style = inherit(default_style, {
-		skew = Vector2(0.05,0.01),
+		skew = Vector2(0.1,0.03),
 		border_width_ = border_width(button_border_width),
+		content_margin_ = content_margins(button_content_margin_h, button_content_margin_v),
+		corner_radius_ = corner_radius(0,0,0,0),
 	})
 	
 	define_style("Button", {
 		normal = button_style,
 		font_color = default_font_color,
 		
-		hover = button_style,
+		hover = inherit(button_style, {
+			shadow_size = 8,
+		}),
 		
 		focus = inherit(button_style, {
-			border_width_ = border_width(default_focus_border_width),
+			border_width_ = border_width(0,0,0,10),
 			border_color = theme_secondary,
-			expand_margin_ = expand_margins(default_shadow_size + default_focus_border_width),
+			#expand_margin_ = expand_margins(default_shadow_size + default_focus_border_width),
 			draw_center = false,
 			shadow_size = 0,
 		}),
@@ -100,7 +106,8 @@ func define_theme():
 			bg_color = theme_primary
 		}),
 		hover_pressed = inherit(button_style, {
-			bg_color = theme_primary
+			bg_color = theme_primary,
+			shadow_size = 8,
 		}),
 		font_pressed_color = theme_background,
 		font_hover_pressed_color = theme_background,

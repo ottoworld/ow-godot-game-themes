@@ -3,51 +3,68 @@
 [ext_resource type="FontFile" uid="uid://bbis00dpk04p2" path="res://themes/fonts/BRLNSR.TTF" id="1_lxlln"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxlln"]
+content_margin_left = 12.0
+content_margin_top = 24.0
+content_margin_right = 12.0
+content_margin_bottom = 24.0
 bg_color = Color(0, 0, 0, 1)
-skew = Vector2(0.05, 0.01)
+skew = Vector2(0.1, 0.03)
 border_color = Color(1, 1, 1, 1)
 shadow_color = Color(1, 1, 1, 1)
 shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cvh1"]
+content_margin_left = 12.0
+content_margin_top = 24.0
+content_margin_right = 12.0
+content_margin_bottom = 24.0
 bg_color = Color(0, 0, 0, 1)
 draw_center = false
-skew = Vector2(0.05, 0.01)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
+skew = Vector2(0.1, 0.03)
 border_width_bottom = 10
 border_color = Color(0.74902, 0.25098, 0.368627, 1)
-expand_margin_left = 14.0
-expand_margin_top = 14.0
-expand_margin_right = 14.0
-expand_margin_bottom = 14.0
 shadow_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkn5x"]
+content_margin_left = 12.0
+content_margin_top = 24.0
+content_margin_right = 12.0
+content_margin_bottom = 24.0
 bg_color = Color(0, 0, 0, 1)
-skew = Vector2(0.05, 0.01)
+skew = Vector2(0.1, 0.03)
 border_color = Color(1, 1, 1, 1)
 shadow_color = Color(1, 1, 1, 1)
-shadow_size = 4
+shadow_size = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4o450"]
+content_margin_left = 12.0
+content_margin_top = 24.0
+content_margin_right = 12.0
+content_margin_bottom = 24.0
 bg_color = Color(0.25098, 0.74902, 0.701961, 1)
-skew = Vector2(0.05, 0.01)
+skew = Vector2(0.1, 0.03)
 border_color = Color(1, 1, 1, 1)
 shadow_color = Color(1, 1, 1, 1)
-shadow_size = 4
+shadow_size = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03npu"]
+content_margin_left = 12.0
+content_margin_top = 24.0
+content_margin_right = 12.0
+content_margin_bottom = 24.0
 bg_color = Color(0, 0, 0, 1)
-skew = Vector2(0.05, 0.01)
+skew = Vector2(0.1, 0.03)
 border_color = Color(1, 1, 1, 1)
 shadow_color = Color(1, 1, 1, 1)
 shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smb0c"]
+content_margin_left = 12.0
+content_margin_top = 24.0
+content_margin_right = 12.0
+content_margin_bottom = 24.0
 bg_color = Color(0.25098, 0.74902, 0.701961, 1)
-skew = Vector2(0.05, 0.01)
+skew = Vector2(0.1, 0.03)
 border_color = Color(1, 1, 1, 1)
 shadow_color = Color(1, 1, 1, 1)
 shadow_size = 4
