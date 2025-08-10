@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://ug5e0tbrbo8i"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://ug5e0tbrbo8i"]
 
 [ext_resource type="FontFile" uid="uid://bbis00dpk04p2" path="res://themes/fonts/BRLNSR.TTF" id="1_slj7w"]
 
@@ -8,10 +8,8 @@ content_margin_top = 24.0
 content_margin_right = 12.0
 content_margin_bottom = 24.0
 bg_color = Color(1, 1, 1, 1)
-skew = Vector2(0.1, 0.03)
 border_color = Color(0, 0, 0, 1)
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 4
+shadow_color = Color(0.799216, 0.400784, 0.494902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dahr"]
 content_margin_left = 12.0
@@ -20,10 +18,9 @@ content_margin_right = 12.0
 content_margin_bottom = 24.0
 bg_color = Color(1, 1, 1, 1)
 draw_center = false
-skew = Vector2(0.1, 0.03)
 border_width_bottom = 10
 border_color = Color(0.74902, 0.25098, 0.368627, 1)
-shadow_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.799216, 0.400784, 0.494902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kslfm"]
 content_margin_left = 12.0
@@ -31,10 +28,9 @@ content_margin_top = 24.0
 content_margin_right = 12.0
 content_margin_bottom = 24.0
 bg_color = Color(1, 1, 1, 1)
-skew = Vector2(0.1, 0.03)
 border_color = Color(0, 0, 0, 1)
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 8
+shadow_color = Color(0.799216, 0.400784, 0.494902, 1)
+shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmcvh"]
 content_margin_left = 12.0
@@ -42,10 +38,9 @@ content_margin_top = 24.0
 content_margin_right = 12.0
 content_margin_bottom = 24.0
 bg_color = Color(0.25098, 0.74902, 0.701961, 1)
-skew = Vector2(0.1, 0.03)
 border_color = Color(0, 0, 0, 1)
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 8
+shadow_color = Color(0.799216, 0.400784, 0.494902, 1)
+shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_va022"]
 content_margin_left = 12.0
@@ -53,10 +48,8 @@ content_margin_top = 24.0
 content_margin_right = 12.0
 content_margin_bottom = 24.0
 bg_color = Color(1, 1, 1, 1)
-skew = Vector2(0.1, 0.03)
 border_color = Color(0, 0, 0, 1)
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 4
+shadow_color = Color(0.799216, 0.400784, 0.494902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6ldd"]
 content_margin_left = 12.0
@@ -64,24 +57,38 @@ content_margin_top = 24.0
 content_margin_right = 12.0
 content_margin_bottom = 24.0
 bg_color = Color(0.25098, 0.74902, 0.701961, 1)
-skew = Vector2(0.1, 0.03)
 border_color = Color(0, 0, 0, 1)
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 4
+shadow_color = Color(0.799216, 0.400784, 0.494902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbvlv"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.025098, 0.074902, 0.0701961, 1)
 border_width_left = 12
 border_width_top = 12
 border_width_right = 12
 border_width_bottom = 12
 border_color = Color(0, 0, 0, 1)
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 4
+expand_margin_left = 12.0
+expand_margin_top = 12.0
+expand_margin_right = 12.0
+expand_margin_bottom = 12.0
+shadow_color = Color(0.799216, 0.400784, 0.494902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqsaa"]
+bg_color = Color(0.025098, 0.074902, 0.0701961, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 12.0
+expand_margin_top = 12.0
+expand_margin_right = 12.0
+expand_margin_bottom = 12.0
+shadow_color = Color(0.799216, 0.400784, 0.494902, 1)
 
 [resource]
 default_font = ExtResource("1_slj7w")
-default_font_size = 36
+default_font_size = 24
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 Button/colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -91,4 +98,16 @@ Button/styles/hover = SubResource("StyleBoxFlat_kslfm")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_rmcvh")
 Button/styles/normal = SubResource("StyleBoxFlat_va022")
 Button/styles/pressed = SubResource("StyleBoxFlat_d6ldd")
+HBoxContainer/constants/separation = 12
+Label/colors/font_color = Color(0, 0, 0, 1)
+LabelCaption/base_type = &"Label"
+LabelCaption/colors/font_color = Color(0, 0, 0, 1)
+LabelCaption/colors/font_outline_color = Color(1, 1, 1, 1)
+LabelCaption/constants/outline_size = 10
+LabelInverse/base_type = &"Label"
+LabelInverse/colors/font_color = Color(1, 1, 1, 1)
+LabelInverse/colors/font_outline_color = Color(1, 1, 1, 1)
+LabelInverse/constants/outline_size = 10
 Panel/styles/panel = SubResource("StyleBoxFlat_cbvlv")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_fqsaa")
+VBoxContainer/constants/separation = 12

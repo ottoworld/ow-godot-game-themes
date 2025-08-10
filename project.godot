@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Otto World Godot Game Themes"
-run/main_scene="uid://bsr5hu0y27d8p"
+run/main_scene="uid://dy11txudwdmgy"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor_plugins]
 
