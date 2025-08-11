@@ -8,7 +8,7 @@ const save_path_light := "res://themes/generated/ow_pro_light.tres"
 const save_path_dark := "res://themes/generated/ow_pro_dark.tres"
 const debug_color := Color.HOT_PINK
 
-# Root theme accent colours at full value
+# Root theme accent colours at full Value
 var	theme_primary_root := Color("#57ffee")
 var	theme_secondary_root := Color("#ff577e")
 
@@ -20,6 +20,8 @@ var	theme_foreground := Color("#FFFFFF")
 var panel_background_color = debug_color
 
 # Defaults
+var default_h_separation = 8
+
 var default_hover := 0.05
 var default_hover_font_darken := 0.5
 
@@ -42,8 +44,8 @@ var default_skew := Vector2(0,0)
 
 # Button
 var button_border_width = 0
-var button_content_margin_v := 24
-var button_content_margin_h := 12
+var button_content_margin_v := 16
+var button_content_margin_h := 16
 var button_expand_margin_v := 0
 var button_expand_margin_h := 0
 var button_hover_size := 4
@@ -108,6 +110,8 @@ func define_theme():
 	})
 	
 	define_style("Button", {
+		h_separation = default_h_separation,
+		
 		normal = button_style,
 		font_color = default_font_color,
 		
@@ -116,7 +120,7 @@ func define_theme():
 		}),
 		
 		focus = inherit(button_style, {
-			border_width_ = border_width(0,0,0,10),
+			border_width_ = border_width(0,0,0,4),
 			border_color = theme_secondary,
 			#expand_margin_ = expand_margins(default_shadow_size + default_focus_border_width),
 			draw_center = false,
@@ -144,12 +148,47 @@ func define_theme():
 		unchecked_disabled = ResourceLoader.load("res://images/ButtonCheckbox_unchecked_black.png"),
 	})
 	
+	define_style("MenuButton", {
+		font_color = default_font_color,
+		font_disabled_color = default_font_color,
+		font_focus_color = default_font_color,
+		font_hover_color = default_font_color,
+		font_hover_pressed_color = default_font_color,
+		font_outline_color = default_font_color,
+		font_pressed_color = default_font_color,
+		pressed = inherit(styles.Button.pressed, {
+			bg_color = theme_background,
+		}),
+		hover_pressed = inherit(styles.Button.hover_pressed, {
+			bg_color = theme_background,
+		}),
+	})
+	
+	define_style("OptionButton", {
+		arrow = ResourceLoader.load("res://images/OptionButton_white_low.png"),
+		arrow_margin = button_content_margin_h,
+		h_separation = button_content_margin_h,
+		
+		font_color = default_font_color,
+		font_disabled_color = default_font_color,
+		font_focus_color = default_font_color,
+		font_hover_color = default_font_color,
+		font_hover_pressed_color = default_font_color,
+		font_outline_color = default_font_color,
+		font_pressed_color = default_font_color,
+		pressed = inherit(styles.Button.pressed, {
+			bg_color = theme_background,
+		}),
+		hover_pressed = inherit(styles.Button.hover_pressed, {
+			bg_color = theme_background,
+		}),
+	})
+	
 	define_style("CheckBox", {
 		checked = ResourceLoader.load("res://images/CheckBox_checked_white.png"),
 		checked_disabled = ResourceLoader.load("res://images/CheckBox_checked_white.png"),
 		unchecked = ResourceLoader.load("res://images/CheckBox_unchecked_white.png"),
 		unchecked_disabled = ResourceLoader.load("res://images/CheckBox_unchecked_white.png"),
-		h_separation = 8,
 		
 		normal = inherit(styles.Button.normal, {
 			bg_color = theme_background,
@@ -169,16 +208,6 @@ func define_theme():
 		}),
 		font_pressed_color = default_font_color,
 		font_hover_pressed_color = default_font_color,
-	})
-	
-	define_style("MenuButton", {
-		font_color = debug_color,
-		font_disabled_color = debug_color,
-		font_focus_color = debug_color,
-		font_hover_color = debug_color,
-		font_hover_pressed_color = debug_color,
-		font_outline_color = debug_color,
-		font_pressed_color = debug_color,
 	})
 	
 	define_variant_style("FlatButton", "Button", {

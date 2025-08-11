@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy11txudwdmgy"]
+[gd_scene load_steps=7 format=3 uid="uid://dy11txudwdmgy"]
 
 [ext_resource type="Texture2D" uid="uid://cxx4y4ucv5ru0" path="res://icon.webp" id="1_8tycj"]
 [ext_resource type="Theme" uid="uid://cddccv30ojdm4" path="res://themes/generated/ow_pro_dark.tres" id="1_n1s7h"]
 [ext_resource type="Script" uid="uid://cke7hia20saqv" path="res://tree.gd" id="2_68sc3"]
+[ext_resource type="Texture2D" uid="uid://cebbspr6odrx5" path="res://images/MenuButton_square.png" id="3_od1h3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl4wp"]
 content_margin_left = 10.0
@@ -100,11 +101,13 @@ text = "CheckButton"
 
 [node name="LineEdit" type="LineEdit" parent="MainPanel/HSplitContainer/BasicControls/VBoxContainer"]
 layout_mode = 2
+focus_mode = 1
 text = "LineEdit"
 
 [node name="TextEdit" type="TextEdit" parent="MainPanel/HSplitContainer/BasicControls/VBoxContainer"]
 custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
+focus_mode = 1
 text = "TextEdit
 
 Unlike LineEdit, I accept multiple lines."
@@ -116,9 +119,10 @@ text = "Label"
 [node name="TabContainer" type="TabContainer" parent="MainPanel/HSplitContainer/BasicControls/VBoxContainer"]
 custom_minimum_size = Vector2(0, 236)
 layout_mode = 2
-current_tab = 0
+current_tab = 2
 
 [node name="Tab 1" type="Control" parent="MainPanel/HSplitContainer/BasicControls/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -168,7 +172,6 @@ context_menu_enabled = true
 selection_enabled = true
 
 [node name="Tab 3" type="Control" parent="MainPanel/HSplitContainer/BasicControls/VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -430,7 +433,9 @@ popup/item_4/disabled = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 0
+focus_mode = 2
 text = "MenuButton"
+icon = ExtResource("3_od1h3")
 flat = false
 item_count = 8
 popup/item_0/text = "Action Item"
