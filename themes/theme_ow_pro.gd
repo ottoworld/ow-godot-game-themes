@@ -4,14 +4,20 @@ extends ProgrammaticTheme
 # Metadata
 const UPDATE_ON_SAVE = true
 const VERBOSITY = Verbosity.QUIET
-var save_path_light := "res://themes/generated/ow_pro_light.tres"
-var save_path_dark := "res://themes/generated/ow_pro_dark.tres"
+const save_path_light := "res://themes/generated/ow_pro_light.tres"
+const save_path_dark := "res://themes/generated/ow_pro_dark.tres"
+const debug_color := Color.HOT_PINK
 
-#Default theme colors (overriden in setup_light/dark)
-var theme_primary := Color.DEEP_PINK
-var theme_secondary := Color.DEEP_PINK
-var theme_background := Color.DEEP_PINK
-var theme_foreground := Color.DEEP_PINK
+# Root theme accent colours at full value
+var	theme_primary_root := Color("#57ffee")
+var	theme_secondary_root := Color("#ff577e")
+
+#Default theme colors (some overriden in setup_light/dark)
+var	theme_primary := theme_primary_root.darkened(0)
+var	theme_secondary := theme_secondary_root.darkened(0)
+var	theme_background := Color("#000000")
+var	theme_foreground := Color("#FFFFFF")
+var panel_background_color = debug_color
 
 # Defaults
 var default_hover := 0.05
@@ -30,7 +36,7 @@ var default_expand_margin := default_border_width
 
 var default_shadow_offset := Vector2(0,0)
 var default_shadow_size := 0
-var default_shadow_color := Color.DEEP_PINK
+var default_shadow_color := debug_color
 
 var default_skew := Vector2(0,0)
 
@@ -51,19 +57,21 @@ var panel_border_width := default_border_width
 
 func setup_dark():
 	set_save_path(save_path_dark)
-	theme_primary = Color("#40bfb3")
-	theme_secondary = Color("#bf405e")
+	theme_primary = theme_primary_root.darkened(0.3)
+	theme_secondary = theme_secondary_root.darkened(0.2)
 	theme_background = Color("#000000")
 	theme_foreground = Color("#FFFFFF")
 	default_shadow_color = theme_foreground.darkened(0.2)
+	panel_background_color = theme_primary.darkened(0.90)
 	
 func setup_light():
 	set_save_path(save_path_light)
-	theme_primary = Color("#40bfb3")
-	theme_secondary = Color("#bf405e")
+	theme_primary = theme_primary_root.darkened(0)
+	theme_secondary = theme_secondary_root.darkened(0)
 	theme_background = Color("#FFFFFF")
 	theme_foreground = Color("#000000")
 	default_shadow_color = theme_secondary.lightened(0.2)
+	panel_background_color = theme_primary.darkened(0.5)
 
 func define_theme():
 	define_default_font(ResourceLoader.load(default_font))
@@ -72,8 +80,6 @@ func define_theme():
 	# Vars referencing `theme_` colors must be instantiated in `define_theme()`
 	var default_border_color := theme_foreground
 	var default_font_color := theme_foreground
-	var default_font_focus_color := theme_background
-	var button_hover_color := default_shadow_color
 
 	
 	var default_style = stylebox_flat({
@@ -114,7 +120,6 @@ func define_theme():
 			border_color = theme_secondary,
 			#expand_margin_ = expand_margins(default_shadow_size + default_focus_border_width),
 			draw_center = false,
-			shadow_size = 0,
 		}),
 		
 		pressed = inherit(button_style, {
@@ -133,19 +138,71 @@ func define_theme():
 	})
 	
 	define_style("CheckButton", {
+		checked = ResourceLoader.load("res://images/ButtonCheckbox_checked.png"),
+		checked_disabled = ResourceLoader.load("res://images/ButtonCheckbox_checked.png"),
+		unchecked = ResourceLoader.load("res://images/ButtonCheckbox_unchecked_black.png"),
+		unchecked_disabled = ResourceLoader.load("res://images/ButtonCheckbox_unchecked_black.png"),
+	})
+	
+	define_style("CheckBox", {
+		checked = ResourceLoader.load("res://images/CheckBox_checked_white.png"),
+		checked_disabled = ResourceLoader.load("res://images/CheckBox_checked_white.png"),
+		unchecked = ResourceLoader.load("res://images/CheckBox_unchecked_white.png"),
+		unchecked_disabled = ResourceLoader.load("res://images/CheckBox_unchecked_white.png"),
+		h_separation = 8,
 		
+		normal = inherit(styles.Button.normal, {
+			bg_color = theme_background,
+		}),
+		font_color = default_font_color,
+		hover = inherit(styles.Button.hover, {
+			bg_color = theme_background,
+		}),
+		focus = inherit(styles.Button.focus, {
+			bg_color = theme_background,
+		}),
+		pressed = inherit(styles.Button.pressed, {
+			bg_color = theme_background,
+		}),
+		hover_pressed = inherit(styles.Button.hover_pressed, {
+			bg_color = theme_background,
+		}),
+		font_pressed_color = default_font_color,
+		font_hover_pressed_color = default_font_color,
+	})
+	
+	define_style("MenuButton", {
+		font_color = debug_color,
+		font_disabled_color = debug_color,
+		font_focus_color = debug_color,
+		font_hover_color = debug_color,
+		font_hover_pressed_color = debug_color,
+		font_outline_color = debug_color,
+		font_pressed_color = debug_color,
+	})
+	
+	define_variant_style("FlatButton", "Button", {
+		# TODO: Make FlatButton text always foreground color.
+		# None of this seems to do anything.
+		font_color = debug_color,
+		font_disabled_color = debug_color,
+		font_focus_color = debug_color,
+		font_hover_color = debug_color,
+		font_hover_pressed_color = debug_color,
+		font_outline_color = debug_color,
+		font_pressed_color = debug_color,
 	})
 	
 	define_style("PanelContainer", {
 		panel = inherit(default_style, {
-			bg_color = theme_primary.darkened(0.9),
+			bg_color = panel_background_color,
 			#content_margin_ = content_margins(panel_border_width + panel_inner_margin),
 		}),
 	})
 	
 	define_style("Panel", {
 		panel = inherit(default_style, {
-			bg_color = theme_primary.darkened(0.9),
+			bg_color = panel_background_color,
 			#content_margin_ = content_margins(panel_border_width + panel_inner_margin),
 		}),
 	})
