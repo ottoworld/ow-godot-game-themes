@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=24 format=3 uid="uid://cddccv30ojdm4"]
+[gd_resource type="Theme" load_steps=26 format=3 uid="uid://cddccv30ojdm4"]
 
 [ext_resource type="Texture2D" uid="uid://c3ytx3yeaq6qc" path="res://images/ButtonCheckbox_checked.png" id="1_0cvh1"]
 [ext_resource type="Texture2D" uid="uid://wmvkpv0a3mpg" path="res://images/CheckBox_checked_white.png" id="1_4o450"]
@@ -178,6 +178,22 @@ expand_margin_right = 12.0
 expand_margin_bottom = 12.0
 shadow_color = Color(0.8, 0.8, 0.8, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odbt4"]
+bg_color = Color(1, 0.411765, 0.705882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxscf"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(1, 1, 1, 1)
+expand_margin_left = 12.0
+expand_margin_top = 12.0
+expand_margin_right = 12.0
+expand_margin_bottom = 12.0
+shadow_color = Color(0.8, 0.8, 0.8, 1)
+
 [resource]
 default_font = ExtResource("1_lxlln")
 default_font_size = 24
@@ -248,4 +264,6 @@ OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_lifar")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_c256w")
 Panel/styles/panel = SubResource("StyleBoxFlat_u7xjh")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_52sdw")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_odbt4")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_lxscf")
 VBoxContainer/constants/separation = 12

@@ -148,22 +148,6 @@ func define_theme():
 		unchecked_disabled = ResourceLoader.load("res://images/ButtonCheckbox_unchecked_black.png"),
 	})
 	
-	define_style("MenuButton", {
-		font_color = default_font_color,
-		font_disabled_color = default_font_color,
-		font_focus_color = default_font_color,
-		font_hover_color = default_font_color,
-		font_hover_pressed_color = default_font_color,
-		font_outline_color = default_font_color,
-		font_pressed_color = default_font_color,
-		pressed = inherit(styles.Button.pressed, {
-			bg_color = theme_background,
-		}),
-		hover_pressed = inherit(styles.Button.hover_pressed, {
-			bg_color = theme_background,
-		}),
-	})
-	
 	define_style("OptionButton", {
 		arrow = ResourceLoader.load("res://images/OptionButton_white_low.png"),
 		arrow_margin = button_content_margin_h,
@@ -220,6 +204,32 @@ func define_theme():
 		font_hover_pressed_color = debug_color,
 		font_outline_color = debug_color,
 		font_pressed_color = debug_color,
+	})
+	
+	define_style("MenuButton", {
+		font_color = default_font_color,
+		font_disabled_color = default_font_color,
+		font_focus_color = default_font_color,
+		font_hover_color = default_font_color,
+		font_hover_pressed_color = default_font_color,
+		font_outline_color = default_font_color,
+		font_pressed_color = default_font_color,
+		pressed = inherit(styles.Button.pressed, {
+			bg_color = theme_background,
+		}),
+		hover_pressed = inherit(styles.Button.hover_pressed, {
+			bg_color = theme_background,
+		}),
+	})
+	
+	define_style("PopupMenu", {
+		hover = stylebox_flat({
+			bg_color = debug_color,
+		}),
+		
+		panel = inherit(default_style, {
+			
+		})
 	})
 	
 	define_style("PanelContainer", {
